@@ -1,5 +1,4 @@
-Bndr
-====
+![Bndr](https://raw.githubusercontent.com/Xpktro/bndr/master/img/logo.png)
 
 This package is basically two things:
 
@@ -60,6 +59,16 @@ The Bndr CLI is made up of two commands:
     Bend the string `Hello world.`:
 
         bndrtxt "Hello world."
+
+
+#### `bndrimg` Samples
+These samples were generated using the same command (on different image files, of course):
+
+    bndrimg input.jpg -s bndr
+
+![Sample 1](https://raw.githubusercontent.com/Xpktro/bndr/master/img/output_sample1.png)
+
+![Sample 2](https://raw.githubusercontent.com/Xpktro/bndr/master/img/output_sample2.png)
 
 
 ### Bndr Library
