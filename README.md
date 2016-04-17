@@ -150,7 +150,7 @@ Applies the filter chain to the given instance.
 Creates an instance of this filter for the given arguments and keyword arguments.
 
 * **`*args`** - Positional, optional arguments that will be available upon creation as the instance member `self.args`.
-* **`**kwargs`** - Named, optional arguments that will be available upon creation as the instance member `self.kwargs`.
+* **` **kwargs `** - Named, optional arguments that will be available upon creation as the instance member `self.kwargs`.
 
 ##### `BndrFilter.process(image)`
 Handler for image filtering. Must return a bytestring of the (filtered) input image data.
@@ -162,7 +162,7 @@ Handler for image filtering. Must return a bytestring of the (filtered) input im
 Creates an instance of this filter for the given arguments and keyword arguments. This is an utility class that wraps the raw image data into a Pillow Image instance.
 
 * **`*args`** - Positional, optional arguments that will be available upon creation as the instance member `self.args`.
-* **`**kwargs`** - Named, optional arguments that will be available upon creation as the instance member `self.kwargs`.
+* **` **kwargs `** - Named, optional arguments that will be available upon creation as the instance member `self.kwargs`.
 
 ##### `PILBndrFilter.process_img(image)`
 Handler for image filtering. Must return a Pillow Image instance.
