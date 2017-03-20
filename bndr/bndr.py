@@ -1,6 +1,12 @@
 # coding:utf-8
+import six
 from PIL import Image
-from cStringIO import StringIO
+
+if six.PY2:
+    from cStringIO import StringIO
+else:
+    from functools import reduce
+    from io import BytesIO as StringIO
 
 __all__ = ['Bndr', 'BndrFilter', 'PILBndrFilter']
 

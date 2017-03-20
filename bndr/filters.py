@@ -1,12 +1,20 @@
 # coding:utf-8
 import copy
 import random
-from itertools import izip, tee
+import six
+
+if six.PY2:
+    from itertools import izip, tee
+    from cStringIO import StringIO
+else:
+    from io import BytesIO as StringIO
+    from itertools import tee
+    izip = zip
+    xrange = range
 
 from PIL import Image, ImageFilter, ImageEnhance
-from cStringIO import StringIO
 
-from bndr import BndrFilter, PILBndrFilter
+from .bndr import BndrFilter, PILBndrFilter
 
 
 __all__ = ['ADRNBend', 'ChrisBend', 'JpglitchBend', 'ADRNGrayscale', 'Blur',

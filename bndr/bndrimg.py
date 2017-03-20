@@ -1,12 +1,17 @@
 # coding:utf-8
 import argparse
 import random
+import six
 
 from PIL import Image
-from cStringIO import StringIO
 
-from bndr import Bndr
-from filters import Blur, Sharpness, Desaturate, Min, Max, Median, \
+if six.PY2:
+    from cStringIO import StringIO
+else:
+    from io import BytesIO as StringIO
+
+from .bndr import Bndr
+from .filters import Blur, Sharpness, Desaturate, Min, Max, Median, \
     ADRNGrayscale, Rotate, ADRNBend, ChrisBend, JpglitchBend
 
 
@@ -36,7 +41,7 @@ def random_filters(seed=None):
     if random.randint(1, 30) == 1:
         filters.append(ADRNGrayscale())
 
-    filters = filter(lambda i: random.randint(1, 10) == 1, filters)
+    filters = list(filter(lambda i: random.randint(1, 10) == 1, filters))
 
     for _ in range(random.randint(0, 3)):
         if random.randint(1, 7) <= 2:
