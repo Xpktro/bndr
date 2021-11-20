@@ -37,8 +37,8 @@ class ADRNBend(BndrFilter):
             pre = core_data[:ii]
             post = core_data[jj:]
             sub_data = core_data[ii:jj]
-            sub_data = sub_data.replace(random.choice(letters),
-                                        random.choice(letters))
+            sub_data = sub_data.replace(random.choice(letters).encode('utf-8'),
+                                        random.choice(letters).encode('utf-8'))
 
             core_data = pre + sub_data + post
         return header + core_data
@@ -58,7 +58,7 @@ class ChrisBend(BndrFilter):
         start_point, end_point = \
             self.get_random_start_and_end_points_in_file(file_data)
         section = file_data[start_point:end_point]
-        repeated = ''
+        repeated = b''
 
         for i in range(1, random.randint(1, 5)):
             repeated += section
